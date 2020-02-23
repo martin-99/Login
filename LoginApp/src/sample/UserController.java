@@ -15,7 +15,5 @@ public class UserController implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
     }
-    public void greeting(String user){
-        userLbl.setText("Hello , "+user);
-    }
+
 }
