@@ -48,7 +48,6 @@ public class LoginController implements Initializable {
                 FXMLLoader loader = new FXMLLoader();
                 Pane root = loader.load(getClass().getResource("User.fxml").openStream());
                 UserController userController = (UserController) loader.getController();
-                userController.greeting(username.getText());
                 primaryStage.setTitle("Hello World");
                 primaryStage.setScene(new Scene(root));
                 primaryStage.show();
