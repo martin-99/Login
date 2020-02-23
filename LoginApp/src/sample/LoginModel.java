@@ -39,9 +39,6 @@ public class LoginModel {
             }
         }catch (Exception e){
             return false;
-        } finally {
-            preparedStatement.close();
-            resultSet.close();
         }
     }
 }

@@ -6,7 +6,7 @@ public class SQLiteConnection {
 public static Connection Connector(){
     try {
         Class.forName("org.sqlite.JDBC");
-        Connection conn = DriverManager.getConnection("jdbc:sqlite:C:\\Temp\\Employee.db");
+        Connection conn = DriverManager.getConnection("jdbc:sqlite:GCUBaking.db");
         return conn;
 
     }catch (Exception e){

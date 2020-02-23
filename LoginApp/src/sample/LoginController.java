@@ -1,5 +1,7 @@
 package sample;
 
+import com.jfoenix.controls.JFXPasswordField;
+import com.jfoenix.controls.JFXTextField;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -22,9 +24,9 @@ public class LoginController implements Initializable {
     private Label isConnected;
 
     @FXML
-    private TextField username;
+    private JFXTextField username;
     @FXML
-    private TextField password;
+    private JFXPasswordField password;
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         if (loginModel.isDbConnected()){
@@ -38,19 +40,20 @@ public class LoginController implements Initializable {
     @FXML
     public void Login(ActionEvent event) {
         try {
-            if (loginModel.isLogin(username.getText(),password.getText())){
-                isConnected.setText("Username and password is correct");
+            if (loginModel.isLogin(username.getText(), password.getText())) {
 
+
+                isConnected.setText("Username and password is correct");
                 Stage primaryStage = new Stage();
                 FXMLLoader loader = new FXMLLoader();
                 Pane root = loader.load(getClass().getResource("User.fxml").openStream());
-               UserController userController = (UserController) loader.getController();
+                UserController userController = (UserController) loader.getController();
                 userController.greeting(username.getText());
-               primaryStage.setTitle("Hello World");
+                primaryStage.setTitle("Hello World");
                 primaryStage.setScene(new Scene(root));
                 primaryStage.show();
-            }
-            else {
+
+            } else {
                 isConnected.setText("Username and password is not correct");
 
             }
